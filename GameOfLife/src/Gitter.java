@@ -79,14 +79,14 @@ public class Gitter {
   private int anzahlLebender (int i, int j) {
     // zählt Anzahl der lebenden Nachbarn
     //ergänzen
-    int count = 0;
-    for (int row = i - 1; row <= i + 1; row++){
-      for (int col = j - 1; col <= j + 1; col++){
-        if (zustand[col][row] == 1) count++;
-      }
-    }
-    if (zustand[i][j] == 1) count--;
-    return count;
+    return zustand[i - 1][j - 1] +
+            zustand[i][j - 1] +
+            zustand[i + 1][j - 1] +
+            zustand[i - 1][j] +
+            zustand[i + 1][j] +
+            zustand[i - 1][j + 1] +
+            zustand[i][j + 1] +
+            zustand[i + 1][j + 1];
     //bis hier hin
   } // Ende AnzahlLebender
 
@@ -94,28 +94,16 @@ public class Gitter {
     int[][] zustandNeu = new int[N][N];
     //Hier ergänzen
     for (int row = 1; row < N - 1; row++) {
-      for (int col = 1; col < N - 1; col++){
-        final int anzahlLebendeNachbarn = anzahlLebender(row, col);
-        final boolean alive = zustand[row][col] == 1;
+      for (int col = 1; col < N - 1; col++) {
+        final int anzahlLebende = anzahlLebender(row, col);
+        final boolean alive = zustand(row, col) == 1;
 
-        // Geburt
-        if (!alive && anzahlLebendeNachbarn == 3) zustandNeu[col][row] = 1;
-
-        // Tod
-        else if (!alive && anzahlLebendeNachbarn != 3) zustandNeu[col][row] = 0;
-
-        // Vereinsamung
-        else if (alive && anzahlLebendeNachbarn < 2) zustandNeu[col][row] = 0;
-
-        // Überbevökerung
-        else
-          if (alive && anzahlLebendeNachbarn > 3) zustandNeu[col][row] = 0;
+        if (!alive) {
+          if (anzahlLebende == 3) zustandNeu[row][col] = 1;
+        } else if (anzahlLebende <= 3 && anzahlLebende >= 2) zustandNeu[row][col] = 1;
+        else zustandNeu[row][col] = 0;
       }
     }
-    
-    
-
-
     //ab hier nichts verändern
     return new Gitter(g, zustandNeu);
   } // Ende Übergang
