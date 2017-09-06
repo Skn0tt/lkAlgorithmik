@@ -98,10 +98,10 @@ public class Gitter {
         final int anzahlLebende = anzahlLebender(row, col);
         final boolean alive = zustand(row, col) == 1;
 
-        if (!alive) {
-          if (anzahlLebende == 3) zustandNeu[row][col] = 1;
-        } else if (anzahlLebende <= 3 && anzahlLebende >= 2) zustandNeu[row][col] = 1;
-        else zustandNeu[row][col] = 0;
+        if (!alive) { // Falls schon tot
+          if (anzahlLebende == 3) zustandNeu[row][col] = 1; // Falls Tot && 3 Nachbarn: Geburt
+        } else if (anzahlLebende == 2 || anzahlLebende == 3) zustandNeu[row][col] = 1;  // Falls lebendig und 2-3 Nachbarn, Bleib am Leben
+        else zustandNeu[row][col] = 0;  // Sonst: Tod
       }
     }
     //ab hier nichts verändern
