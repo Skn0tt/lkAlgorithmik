@@ -4,16 +4,18 @@
 * Merkmal: Ruft sich selbst auf
 
 Pseudocode:
-´´´pseudo
+```
 funktion rekursiv(n) {
   wenn einfach zu lösen
-  dann gib lösung zurück
+    dann gib lösung zurück
   sonst
     teile Problem in Unterprobleme auf
     führe dich selbst erneut aus
     gib zusammengesetzte Ergebnisse zurück
 }
-´´´
+```
+Dabei nennt sich die erste Bedingung *Base Case*,
+die zweite *Problemaufteilung*.
 
 ### Hanoi
 Altes asiatisches Spiel
@@ -34,6 +36,13 @@ int hanoiRec(int n) {
   return 2 * hanoiRec(n - 1) + 1; // Problemaufteilung
 }
 ```
+Laufzeit: $\Theta(2^n)$
+
+Expliziter Ansatz:
+$$
+Z(n) = 2^n - 1
+$$
+Laufzeit: $\Theta(n)$
 
 ### Fibonacci
 Beispiel:
