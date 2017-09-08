@@ -1,6 +1,6 @@
 # Game of Life
 
-Das *Game of Life* wurde in den //Jahr Jahren von John Horton Conway umgesetzt.
+Das *Game of Life* wurde in den 1970er Jahren von John Horton Conway entworfen.
 Es basiert auf einem simplen Modell des Zellzyklus und soll diesen veranschaulichen.
 Das Modell wurde für einen zweidimensionalen Automaten entwickelt und lief auch auf diesem.
 
@@ -79,3 +79,12 @@ Sie wird auf 1 gesetzt.
 
 In jedem anderen Fall ist *Übergangsregel 2, 4* oder *5* eingetroffen, nach der die Zelle stirbt oder tot bleibt.
 Sie wird auf 0 gesetzt.
+
+### Besondere Muster
+
+Durch diese Regeln gibt es einige besondere Muster, die sich bilden lassen.
+![Patterns](http://www.math.cornell.edu/~lipa/mec/4life2.png)
+
+In diesem Video sind einige sehr interessante, Komplexe Muster und Abfolgen dargestellt:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C2vgICfQawE" frameborder="0" allowfullscreen></iframe>
