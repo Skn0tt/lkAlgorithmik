@@ -49,7 +49,7 @@ public class Fibonacci {
      * @param n Index in Fibonacci row
      * @return fib(n)
      */
-    static int fibRecCache(int n){
+    static int fibRecCache(int n) {
         if (cache.size() <= n) cache.add(fibRecCache(n - 1) + fibRecCache(n - 2));
         return cache.get(n);
     }
