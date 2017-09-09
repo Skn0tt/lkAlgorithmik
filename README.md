@@ -1,5 +1,5 @@
-# lkDatenStrukturen
-LK Q1 Reichelt, Thema: Daten und ihre Strukturierung
+# lkAlgorithmik
+LK Q1 Reichelt, Thema: Algorithmik
 
 **Wichtig:** Für jedes Unterthema bzw. jede eigenständige Implementierung ist ein neuer Unterordner anzulegen.
 Dieser enthält zwingend:
