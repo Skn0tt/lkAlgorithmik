@@ -9,7 +9,7 @@ Das Modell wurde für einen zweidimensionalen Automaten entwickelt und lief auch
 Es gibt ein Spielfeld der Maße $ N \cdot N $.
 Jeder Punkt dieses Spielfelds stellt eine Zelle dar, die entweder lebendig oder tot sein kann.
 
-Fünf *Übergangsregeln* bestimmen, ob eine Zelle im nächsten Zug lebt:
+Fünf *Übergangsregeln* bestimmen, ob eine Zelle im nächsten Zug lebt oder stirbt:
 1. **Geburt:** Eine *tote* Zelle lebt im nächsten Zug, wenn sie exakt *3* lebende Nachbarn hat: `!alive && lebendeNachbarn == 3`
 2. **Tod:** Eine *tote* Zelle bleibt tot, wenn sie *nicht* exakt *3* lebende Nachbarn hat: `!alive && lebendeNachbarn != 3`
 3. **Überleben:** Eine *lebende* Zelle bleibt lebend, wenn sie *2* oder *3* Nachbarn hat: `alive && (lebendeNachbarn == 2 || lebendeNachbarn == 3)`
