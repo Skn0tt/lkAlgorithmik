@@ -70,7 +70,7 @@ zweiI --> null
 
 Deshalb Lösung: Caching
 ```java
-ArrayList<Integer> cache = new ArrayList<>(Arrays.asList(0, 1));
+List<Integer> cache = new ArrayList<>(Arrays.asList(0, 1));
 
 int fib(int n) {
     if (cache.size() <= n){

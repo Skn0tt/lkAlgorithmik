@@ -53,5 +53,5 @@ public class Fibonacci {
         if (cache.size() <= n) cache.add(fibRecCache(n - 1) + fibRecCache(n - 2));
         return cache.get(n);
     }
-    static ArrayList<Integer> cache = new ArrayList<>(Arrays.asList(0, 1));
+    static List<Integer> cache = new ArrayList<>(Arrays.asList(0, 1));
 }
