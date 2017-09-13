@@ -19,16 +19,18 @@ die zweite *Problemaufteilung*.
 
 ### Hanoi
 Altes asiatisches Spiel
-Idee: Drei Stäbe stecken im Boden. Auf einem davon sind von groß nach klein Scheiben aufgeschichtet.
-Ziel: Den Stapel von einem Stab zu anderem verschieben
-Catch: Eine Scheibe darf nie auf einer kleineren liegen
+**Idee:** Drei Stäbe stecken im Boden. Auf einem davon sind von groß nach klein Scheiben aufgeschichtet.
+**Ziel:** Den Stapel von einem Stab zu anderem verschieben
+**Catch:** Eine Scheibe darf nie auf einer kleineren liegen
 
-Lösungsstrategie: // Siehe Google Bilder
+#### Lösungsstrategie
+![Lösungsstrategie](http://www.peterloos.de/pictures/wpf/TowersOfHanoiRecursiveAlgorithm.png)
 
 Die minimal benötigte Anzahl der Züge $Z$ in Abhängigkeit von der Anzahl der Scheiben $n$ sei $Z(n)$.
 Ansatz: $$ Z(n) = 2 *  Z(n - 1) + 1$$
 
-Implementierung:
+#### Implementierung
+##### Rekursiv
 ```java
 int hanoiRec(int n) {
   if (n == 1) return 1; // Base Case
@@ -38,7 +40,7 @@ int hanoiRec(int n) {
 ```
 Laufzeit: $\Theta(2^n)$
 
-Expliziter Ansatz:
+#### Explizit
 $$
 Z(n) = 2^n - 1
 $$
@@ -73,12 +75,23 @@ Deshalb Lösung: Caching
 List<Integer> cache = new ArrayList<>(Arrays.asList(0, 1));
 
 int fib(int n) {
-    if (cache.size() <= n){
+    if (cache.size() <= n)
       cache.add(fib(n - 1) + fib(n - 2));
-    }
-    
     return cache.get(n);
 }
 ```
 Bereits berechnete Werte werden zwischengespeichert, jeder Wert wird somit nur 1mal errechnet
 &rarr; Bessere Laufzeit $\Theta(n)$
+
+### Hofstadter Q-Sequenz
+$$
+Q(n) =
+\begin{cases}
+Q(n - Q(n - 1) + Q(n - Q(n - 2))) & n > 2 \\
+1 & n = 1 \lor n = 2
+\end{cases}
+$$
+
+#### Aufrufdiagramm
+für $Q(4)$
+![Aufrufdiagramm](https://firebasestorage.googleapis.com/v0/b/simonknott-de.appspot.com/o/HofstadterQ%20Aufrufdiagramm.svg?alt=media&token=d086f693-3f2a-4b9a-84bd-cf75497d9293)
