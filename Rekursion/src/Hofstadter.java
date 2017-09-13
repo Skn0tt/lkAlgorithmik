@@ -6,18 +6,25 @@ import java.util.List;
  * Created by simon.knott on 13.09.2017.
  */
 public class Hofstadter {
-    public static void main(String... args){
-        System.out.println(hofstadterRecCache(50));
-    }
+  /**
+   * Recursive Implementation of the Hofstadter Q-Sequence
+   * @param n index
+   * @return Q(n)
+   */
+  static int hofstadterQRec(int n) {
+    if (n <= 2) return 1;
+    return hofstadterQRec(n - hofstadterQRec(n - 1)) + hofstadterQRec(n - hofstadterQRec(n - 2));
+  }
 
-    static int hofstadterRec(int n) {
-        if (n <= 2) return 1;
-        return hofstadterRec(n - hofstadterRec(n - 1)) + hofstadterRec(n - hofstadterRec(n - 2));
-    }
-
-    static int hofstadterRecCache(int n) {
-        if (cache.size() <= n) cache.add(hofstadterRecCache(n - hofstadterRecCache(n - 1)) + hofstadterRecCache(n - hofstadterRecCache(n - 2)));
-        return cache.get(n);
-    }
-    static List<Integer> cache = new ArrayList<>(Arrays.asList(0, 1, 1));
+  /**
+   * Recursive Implementation of the Hofstadter Q-Sequence with caching
+   * @param n index
+   * @return Q(n)
+   */
+  static int hofstadterQRecCache(int n) {
+    if (cache.size() <= n)
+      cache.add(hofstadterQRecCache(n - hofstadterQRecCache(n - 1)) + hofstadterQRecCache(n - hofstadterQRecCache(n - 2)));
+    return cache.get(n);
+  }
+  static List<Integer> cache = new ArrayList<>(Arrays.asList(0, 1, 1));
 }
