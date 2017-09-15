@@ -34,6 +34,8 @@ public class KochkurveGUI extends JFrame {
   private JButton jbtnDrachenkurve = new JButton();
   private JButton jbtnPythagorasBaum = new JButton();
 
+  private static final double angle = 45;
+
   // Ende Attribute
   private KochkurveGUI(String title) {
     // Frame-Initialisierung
@@ -164,34 +166,39 @@ public class KochkurveGUI extends JFrame {
   }
 
   private void pythagorasBaum(int t, int vz, double laenge) {
-    if (t == 1) return;
+    if (t == 0) return;
 
+    // 1. Seite
     turtle.forward(laenge);
 
-    turtle.left(45 * vz);
-    pythagorasBaum(t - 1, vz, neueLaenge(laenge));
-    turtle.right((45 + 90) * vz);
+    // 1. Haus
+    turtle.left(angle * vz);
+    pythagorasBaum(t - 1, vz, neueLaenge(laenge, angle));
+    turtle.right(angle * vz);
 
-    turtle.forward(laenge);
-
-    turtle.left((90 + 45) * vz);
-    pythagorasBaum(t - 1, vz * -1, laenge);
-    turtle.right((90 + 45 + 90) * vz);
-
-    turtle.forward(laenge);
+    // Obere Seite
     turtle.right(90 * vz);
     turtle.forward(laenge);
+
+    // 2. Haus
+    turtle.left(angle * vz);
+    pythagorasBaum(t - 1, vz * -1, neueLaenge(laenge, angle));
+    turtle.right(angle * vz);
+
+    // 2. Seite
+    turtle.right(90 * vz);
+    turtle.forward(laenge);
+
+    // Untere Seite
+    turtle.right(90 * vz);
+    turtle.forward(laenge);
+
+    turtle.right(90 * vz);
   }
 
-  private double neueLaenge(double a) {
-    return Math.sqrt(2 * Math.pow(a, 2));
-  }
-
-  private void quadrat(double laenge) {
-    for (int i = 0; i < 4; i++) {
-      turtle.forward(laenge);
-      turtle.left(90);
-    }
+  private double neueLaenge(double s, double a) {
+    //return (s * s / Math.sin(a / 2)) / 2;
+    return Math.sqrt(90 / a) / (90 / a) * s;
   }
 
   //Leitprogramm Rekursives Programmieren. Kapitel 4 Programmieraufgabe 6
