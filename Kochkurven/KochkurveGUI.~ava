@@ -180,10 +180,9 @@ public class KochkurveGUI extends JFrame {
       return;
     } // end of if
     
-    zeichneDrachen(t-1, (vz + 1) % 2, laenge);
-    if (vz == 1) turtle.left(90);
-    else turtle.right(90);
-    zeichneDrachen(t-1, (vz + 1) % 2, laenge);
+    zeichneDrachen(t-1, vz * -1, laenge);
+    turtle.right(90 * vz);
+    zeichneDrachen(t-1, vz * -1, laenge);
   }
 
   public boolean saveWindowTo(String file, int x, int y, int width, int height) {
@@ -248,7 +247,7 @@ public class KochkurveGUI extends JFrame {
     turtle.setPos(-400, -150);
     turtle.setAngle(90);
 
-    zeichneDrachen(t, 1, laenge);
+    zeichneDrachen(t, 1, (int) laenge);
   } // end of jbtnDrachenkurve_ActionPerformed
 
   public void jbtnPythagorasBaum_ActionPerformed(ActionEvent evt) {
