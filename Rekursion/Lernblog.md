@@ -4,10 +4,10 @@ Rekursion ist eine Problemlösungsstrategie.
 Ihr besonderes Merkmal ist, dass sie komplexe Probleme aufteilt und sich dann für diese Unterprobleme selbst aufruft.
 Dabei besteht ein rekursiver Algorithmus immer aus zwei Teilen:
 
-- **Base Case:** Falls ein Problem so einfach ist, dass man es sofort lösen kann, wird das Ergebnis zurückgegeben.
+- **Rekursionsbasis:** Falls ein Problem so einfach ist, dass man es sofort lösen kann, wird das Ergebnis zurückgegeben.
 Bei einer rekursive Zahlenfolge könnten das zum Beispiel die Grundwerte sein.
 
-- **Problemaufteilung:** In der Problemaufteilung wird das Problem in beliebig viele Sub-Probleme unterteilt.
+- **Rekursionsschritt:** Im Rekursionsschritt wird das Problem in beliebig viele Sub-Probleme unterteilt.
 Diese werden dann gelöst, zusammengesetzt und zurückgegeben.
 
 In Pseudocode könnte es also so aussehen:
@@ -21,7 +21,7 @@ funktion rekursiv(n) {
     gib zusammengesetzte Ergebnisse zurück
 }
 ```
-Hierbei sind Zeile 2-3 *Base Case*, Zeile 4-7 *Problemaufteilung*.
+Hierbei sind Zeile 2-3 die *Rekursionsbasis*, Zeile 4-7 *Rekursionsschritt*.
 
 ### Fibonacci
 Ein Standardbeispiel für die Rekursion ist die *Fibonacci*-Sequenz.
@@ -37,7 +37,6 @@ $$
 
 Das bedeutet: Ein Element der Fibonacci-Sequenz ist immer die Summe seiner beiden Vorgänger, wobei die ersten beiden Stellen den Wert eins haben.
 
-
 Die ersten zehn Elemente der Folge sind also:
 $$
 1; 1; 2; 3; 5; 8; 13; 21; 34; 55
@@ -48,13 +47,13 @@ In der Java-Implementierung sieht das ganze so aus:
 int fib(int n) {
   if (n == 0 || n == 1) return 1; // Base Cases
 
-  return fib(n -1) + fib(n - 2) // Problemaufteilung
+  return fib(n - 1) + fib(n - 2) // Rekursionsschritt
 }
 ```
 Zeichnet man nun ein Aufrufdiagramm, so wird ein Problem der Rekursion schnell deutlich:
 Der gleiche Wert wird mehrmals berechnet.
 
-Am Aufrufdiagramm von des dritten Werts kann man das ganze schon sehen:
+Am Aufrufdiagramm der dritten Stelle kann man das ganze schon sehen:
 
 ```mermaid
 graph TD
@@ -119,13 +118,13 @@ Die Implementierung sieht wie folgt aus:
 int hanoiRec(int n) {
   if (n == 1) return 1; // Base Case
 
-  return 2 * hanoiRec(n - 1) + 1; // Problemaufteilung
+  return 2 * hanoiRec(n - 1) + 1; // Rekursionsschritt
 }
 ```
 Laufzeit: $\Theta(2^n)$
 
-Der Base Case ist $n=1$: Wenn nur eine Scheibe verschoben werden soll, dann dauert das genau einen Zug.
-Die Problemaufteilung implementiert exakt die oben genannte Funktion.
+Die Rekursionsbasis ist $n=1$: Wenn nur eine Scheibe verschoben werden soll, dann dauert das genau einen Zug.
+Der Rekursionsschritt implementiert exakt die oben genannte Funktion.
 
 #### Explizit
 Die Anzahl der notwendigen Züge lässt sich auch explizit bestimmen:
@@ -135,6 +134,10 @@ $$
 Laufzeit: $\Theta(n)$
 
 ### Hofstadter Q-Sequenz
+Douglas R. Hofstadters Q-Sequenz ist eine Abwandlung der Fibonacci-Folge.
+In dieser wird durch die Vorgägner $n-1$ und $n-2$ bestimmt, aus welchen Vorgängern das Ergebnis zusammengesetzt wird.
+
+Die Formel sieht so aus:
 $$
 Q(n) =
 \begin{cases}
@@ -142,6 +145,16 @@ Q(n - Q(n - 1) + Q(n - Q(n - 2))) & n > 2 \\
 1 & n = 1 \lor n = 2
 \end{cases}
 $$
+
+Die Implementation sieht so aus:
+```java
+int hofstadterQRec(int n) {
+  if (n <= 2) return 1;
+  return hofstadterQRec(n - hofstadterQRec(n - 1)) + hofstadterQRec(n - hofstadterQRec(n - 2));
+}
+```
+In Zeile 3 ist die Rekursionsbasis notiert: Wenn $n$ kleiner/gleich 2 ist, wird 1 zurückgegeben.
+In allen anderen Fällen wird der Rekursionsschritt ausgeführt, nachh dem gleichen Schema wie in der Formel zu sehen ist.
 
 #### Aufrufdiagramm
 für $Q(4)$
