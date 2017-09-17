@@ -168,13 +168,21 @@ public class KochkurveGUI extends JFrame {
   private void pythagorasBaum(int t, int vz, double laenge) {
     if (t == 0) return;
 
+    setColor(t);
+
     // 1. Seite
     turtle.forward(laenge);
 
     // 1. Haus
     turtle.left(angle * vz);
-    pythagorasBaum(t - 1, vz, neueLaenge(laenge, angle));
+    pythagorasBaum(
+      t - 1,
+      vz,
+      neueLaenge(laenge, angle)
+    );
     turtle.right(angle * vz);
+
+    setColor(t);
 
     // Obere Seite
     turtle.right(90 * vz);
@@ -182,8 +190,14 @@ public class KochkurveGUI extends JFrame {
 
     // 2. Haus
     turtle.left(angle * vz);
-    pythagorasBaum(t - 1, vz * -1, neueLaenge(laenge, angle));
+    pythagorasBaum(
+      t - 1,
+      vz * -1,
+      neueLaenge(laenge, angle)
+    );
     turtle.right(angle * vz);
+
+    setColor(t);
 
     // 2. Seite
     turtle.right(90 * vz);
@@ -197,8 +211,19 @@ public class KochkurveGUI extends JFrame {
   }
 
   private double neueLaenge(double s, double a) {
-    //return (s * s / Math.sin(a / 2)) / 2;
     return Math.sqrt(90 / a) / (90 / a) * s;
+  }
+
+  private void setColor(int t) {
+    turtle.setPenColor(
+      t % 2 == 1 ?
+        new Color(255, 0, 0) :
+        new Color(155, 76, 0)
+    );
+
+    if (t == 1) turtle.setPenColor(
+      new Color(0, 255, 0)
+    );
   }
 
   //Leitprogramm Rekursives Programmieren. Kapitel 4 Programmieraufgabe 6
