@@ -56,15 +56,12 @@ public class GUI extends JFrame {
     jtxtAusgabe.setEditable(false);
     jtxtAusgabe.setTabSize(3);
     jtxtAusgabe.setFont(new Font("Dialog", Font.BOLD, 16));
+    jtxtAusgabe.setLineWrap(true);
     cp.add(jtxtAusgabeScrollPane);
     btnSuche.setBounds(120, 240, 81, 49);
     btnSuche.setText("Suche");
     btnSuche.setMargin(new Insets(2, 2, 2, 2));
-    btnSuche.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent evt) {
-          btnSuche_ActionPerformed(evt);
-        }
-      });
+    btnSuche.addActionListener(this::btnSuche_ActionPerformed);
     btnSuche.setEnabled(false);
     cp.add(btnSuche);
     jLabel2.setBounds(208, 248, 43, 33);
@@ -80,11 +77,7 @@ public class GUI extends JFrame {
     btnErzeugeArray.setBounds(8, 240, 105, 49);
     btnErzeugeArray.setText("Erzeuge Werte");
     btnErzeugeArray.setMargin(new Insets(2, 2, 2, 2));
-    btnErzeugeArray.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent evt) {
-          btnErzeugeArray_ActionPerformed(evt);
-        }
-      });
+    btnErzeugeArray.addActionListener(this::btnErzeugeArray_ActionPerformed);
     cp.add(btnErzeugeArray);
     lblAusgabe.setBounds(16, 296, 395, 49);
     lblAusgabe.setText("");
@@ -105,7 +98,11 @@ public class GUI extends JFrame {
   } // end of main
 
   public void btnSuche_ActionPerformed(ActionEvent evt) {
-    //TODO
+    int gesucht = jnbfZahl.getInt();
+    int i = s.suche(gesucht);
+    jlblNBild.setIcon(i == -1 ? haken : kreuz);
+
+    lblAusgabe.setText(String.valueOf(i));
   } // end of btnSuche_ActionPerformed
 
   public void btnErzeugeArray_ActionPerformed(ActionEvent evt) {

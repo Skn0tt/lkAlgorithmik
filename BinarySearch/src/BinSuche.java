@@ -5,15 +5,14 @@
   * @version 1.0 vom 18.09.2017
   * @author B. Reichelt
   */
-import java.util.Arrays;
 import java.util.Random;
+import java.util.StringJoiner;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 
 public class BinSuche {
   // Util
-  Random random = new Random();
+  private Random random = new Random();
 
   // Anfang Attribute
   private int[] array;
@@ -24,10 +23,31 @@ public class BinSuche {
   }
 
   // Anfang Methoden
-  public int binSucheRek(int gesZahl, int links, int rechts) {
-    //TODO
-    
-    return 0;
+  private int mittel(int left, int right) {
+    return (left + right) / 2;
+  }
+
+  private int binSucheRek(int gesZahl, int links, int rechts) {
+    if (links == rechts) {
+      if (array[links] == gesZahl) return links;
+      else return -1;
+    }
+
+    int mitte = mittel(links, rechts);
+    int mitteWert = array[mitte];
+
+    if (mitteWert == gesZahl) return mitte;
+    if (mitteWert > gesZahl) return binSucheRek(gesZahl, links, mitte);
+
+    return binSucheRek(gesZahl, mitte + 1, rechts);
+  }
+
+  public int suche(int gesucht) {
+    return binSucheRek(gesucht, 0, array.length);
+  }
+
+  private int random(int min, int max) {
+    return random.nextInt(max - min + 1) + min;
   }
 
   public void erzeugeNeuesArray(int anzahl, int minWert, int maxWert) {
@@ -39,15 +59,11 @@ public class BinSuche {
     java.util.Arrays.sort(array);
   }
 
-  private int random(int min, int max) {
-    return random.nextInt(max - min + 1) + min;
-  }
-
   public String arrayAusgeben() {
-    IntStream stream = Arrays.stream(array):
+    StringJoiner sj = new StringJoiner(" ");
+    IntStream.of(array).forEach(x -> sj.add(String.valueOf(x)));
 
-
-    return "";
+    return sj.toString();
   }
 
   // Ende Methoden
