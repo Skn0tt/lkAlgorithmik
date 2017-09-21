@@ -100,7 +100,7 @@ public class GUI extends JFrame {
   public void btnSuche_ActionPerformed(ActionEvent evt) {
     int gesucht = jnbfZahl.getInt();
     int i = s.suche(gesucht);
-    jlblNBild.setIcon(i == -1 ? haken : kreuz);
+    jlblNBild.setIcon(i == -1 ? kreuz : haken);
 
     lblAusgabe.setText(String.valueOf(i));
   } // end of btnSuche_ActionPerformed
