@@ -31,7 +31,8 @@ public class GUI extends JFrame {
   private JScrollPane jtxtSortiertScrollPane = new JScrollPane(jtxtSortiert);
   private JButton btnWerteErzeugen = new JButton();
   // Ende Attribute
-  public GUI(String title) {
+
+  private GUI(String title) {
     // Frame-Initialisierung
     super(title);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -64,11 +65,7 @@ public class GUI extends JFrame {
     btnMergesort.setBounds(136, 384, 81, 49);
     btnMergesort.setText("Mergesort");
     btnMergesort.setMargin(new Insets(2, 2, 2, 2));
-    btnMergesort.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent evt) {
-        btnMergesort_ActionPerformed(evt);
-      }
-    });
+    btnMergesort.addActionListener(this::btnMergesort_ActionPerformed);
     cp.add(btnMergesort);
     jLabel2.setBounds(16, 64, 91, 25);
     jLabel2.setText("unsortiert:");
@@ -83,11 +80,7 @@ public class GUI extends JFrame {
     btnWerteErzeugen.setBounds(16, 384, 113, 49);
     btnWerteErzeugen.setText("Erzeuge Werte");
     btnWerteErzeugen.setMargin(new Insets(2, 2, 2, 2));
-    btnWerteErzeugen.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent evt) { 
-        btnWerteErzeugen_ActionPerformed(evt);
-      }
-    });
+    btnWerteErzeugen.addActionListener(this::btnWerteErzeugen_ActionPerformed);
     cp.add(btnWerteErzeugen);
     // Ende Komponenten
     setVisible(true);
@@ -98,22 +91,17 @@ public class GUI extends JFrame {
     new GUI("RekursivSortieren");
   } // end of main
   
-  public void btnMergesort_ActionPerformed(ActionEvent evt) {
+  private void btnMergesort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.sort();
 
     jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
   } // end of btnMergesort_ActionPerformed
-  
-  public void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
+
+  private void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.erzeugeNeuesArray(50, 0, 100);
 
     jtxtUnsortiert.setText(rekursivSortieren.arrayAusgeben());
   } // end of btnWerteErzeugen_ActionPerformed
 
-  private Random random = new Random();
-  private int random(int min, int max) {
-    return random.nextInt(max - min + 1) + min;
-  }
-  
   // Ende Methoden
 } // end of class BinaereSuche
