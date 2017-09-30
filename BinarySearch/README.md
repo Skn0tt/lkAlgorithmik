@@ -34,3 +34,6 @@ int binSuche(int gesucht, int links, int rechts) {
   return binSuche(gesucht, mitte + 1, rechts);
 }
 ```
+
+## Effizienz
+$\Theta(log(n))$

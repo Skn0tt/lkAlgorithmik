@@ -5,7 +5,7 @@
   * @version 1.0 vom 24.08.2015
   * @author
   */
-import java.util.Random;
+import java.util.*;
 
 
 class RekursivSortieren {

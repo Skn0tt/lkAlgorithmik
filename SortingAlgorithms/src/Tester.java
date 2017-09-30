@@ -26,6 +26,7 @@ public class Tester {
     s.sort();
 
     //Ausgeben der Werte
+    System.out.println("Werte Sortiert:");
     System.out.println(s.arrayAusgeben());
   } // end of main
 } // end of class Tester
