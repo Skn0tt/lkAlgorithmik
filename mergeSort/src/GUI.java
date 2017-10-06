@@ -126,7 +126,6 @@ public class GUI extends JFrame {
     jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
   } // end of btnMergesort_ActionPerformed
   
-<<<<<<< HEAD:mergeSort/src/GUI.java
   private void btnMergesort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.sort();
 
@@ -135,16 +134,6 @@ public class GUI extends JFrame {
 
   private void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.erzeugeNeuesArray(50, 0, 100);
-=======
-  public void btnMergesort_ActionPerformed(ActionEvent evt) {
-    rekursivSortieren.mergeSort();
-
-    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnMergesort_ActionPerformed
-  
-  public void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
-    rekursivSortieren.erzeugeNeuesArray(50, 0, 10);
->>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/src/GUI.java
 
     jtxtUnsortiert.setText(rekursivSortieren.arrayAusgeben());
   } // end of btnWerteErzeugen_ActionPerformed

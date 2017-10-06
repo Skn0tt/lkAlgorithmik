@@ -122,7 +122,7 @@ class RekursivSortieren {
   }
   
   /**
-   * Erzeugt ein neues Array der Länge Anzahl mit Zufallszahlen zwischen minWert und maxWert
+   * Erzeugt ein neues Array der Lï¿½nge Anzahl mit Zufallszahlen zwischen minWert und maxWert
    * @param anzahl Anzahl der Werte im Array
    * @param minWert minimaler Wert
    * @param maxWert maximaler Wert
@@ -137,12 +137,8 @@ class RekursivSortieren {
   }
   
   public String arrayAusgeben() {
-<<<<<<< HEAD:mergeSort/src/RekursivSortieren.java
     StringBuilder res = new StringBuilder(array[0] + "\t");
     
-=======
-    String res = array[0] + "\t";
->>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/src/RekursivSortieren.java
     for (int i = 1; i < array.length; i++) {
       if ((i % 10) == 0) {
         res.append("\n");

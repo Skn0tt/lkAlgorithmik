@@ -21,15 +21,8 @@ public class Tester {
     //Ausgeben der Werte
     System.out.println("Werte unsortiert:");
     System.out.println(s.arrayAusgeben());
-<<<<<<< HEAD:mergeSort/src/Tester.java
-
-    //Sortieren
-    s.sort();
-
-=======
     //sortieren
     s.mergeSort();
->>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/src/Tester.java
     //Ausgeben der Werte
     System.out.println("Werte Sortiert:");
     System.out.println(s.arrayAusgeben());
