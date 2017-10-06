@@ -19,7 +19,7 @@ public class Tester {
     System.out.println("Werte unsortiert:");
     System.out.println(s.arrayAusgeben());
     //sortieren
-    s.sort();
+    s.mergeSort();
     //Ausgeben der Werte
     System.out.println(s.arrayAusgeben());
   } // end of main
