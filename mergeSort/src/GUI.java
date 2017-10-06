@@ -13,24 +13,10 @@ import javax.swing.*;
   * @author
   */
 public class GUI extends JFrame {
-  // Anfang Attribute
-  private JLabel jLabel1 = new JLabel();
   private JTextArea jtxtUnsortiert = new JTextArea("");
-  private JScrollPane jtxtUnsortiertScrollPane = new JScrollPane(jtxtUnsortiert);
-
-  private JButton btnMergesort = new JButton();
-  private JButton btnQuicksort = new JButton();
-  private JButton btnSelectionsort = new JButton();
-  private JButton btnBubblesort = new JButton();
+  private JTextArea jtxtSortiert = new JTextArea("");
 
   private RekursivSortieren rekursivSortieren = new RekursivSortieren();
-
-  private JLabel jLabel2 = new JLabel();
-  private JLabel jLabel3 = new JLabel();
-  private JTextArea jtxtSortiert = new JTextArea("");
-  private JScrollPane jtxtSortiertScrollPane = new JScrollPane(jtxtSortiert);
-  private JButton btnWerteErzeugen = new JButton();
-  // Ende Attribute
 
   private GUI(String title) {
     // Frame-Initialisierung
@@ -49,12 +35,15 @@ public class GUI extends JFrame {
     
     Container cp = getContentPane();
     cp.setLayout(null);
+
     // Anfang Komponenten
+    JLabel jLabel1 = new JLabel();
     jLabel1.setBounds(176, 16, 187, 33);
     jLabel1.setText("Sortieren");
     jLabel1.setFont(new Font("Dialog", Font.BOLD, 24));
     jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
     cp.add(jLabel1);
+    JScrollPane jtxtUnsortiertScrollPane = new JScrollPane(jtxtUnsortiert);
     jtxtUnsortiertScrollPane.setBounds(16, 88, 441, 129);
     jtxtUnsortiert.setEnabled(true);
     jtxtUnsortiert.setEditable(false);
@@ -63,80 +52,101 @@ public class GUI extends JFrame {
     jtxtUnsortiert.setFont(new Font("Dialog", Font.BOLD, 16));
     cp.add(jtxtUnsortiertScrollPane);
 
+    JLabel jLabel2 = new JLabel();
+    jLabel2.setBounds(16, 64, 91, 25);
+    jLabel2.setText("unsortiert:");
+    cp.add(jLabel2);
+    JLabel jLabel3 = new JLabel();
+    jLabel3.setBounds(16, 224, 123, 17);
+    jLabel3.setText("sortiert:");
+    cp.add(jLabel3);
+    JScrollPane jtxtSortiertScrollPane = new JScrollPane(jtxtSortiert);
+    jtxtSortiertScrollPane.setBounds(16, 248, 441, 129);
+    jtxtSortiert.setFont(new Font("Dialog", Font.BOLD, 16));
+    jtxtSortiert.setEditable(false);
+    cp.add(jtxtSortiertScrollPane);
+    JButton btnWerteErzeugen = new JButton();
+    btnWerteErzeugen.setBounds(16, 384, 113, 49);
+    btnWerteErzeugen.setText("Erzeuge Werte");
+    btnWerteErzeugen.setMargin(new Insets(2, 2, 2, 2));
+    btnWerteErzeugen.addActionListener(this::btnWerteErzeugen_ActionPerformed);
+    cp.add(btnWerteErzeugen);
+
     // mergeSort
-    btnMergesort.setBounds(136, 384, 81, 49);
+    JButton btnMergesort = new JButton();
+    btnMergesort.setBounds(250, 450, 100, 50);
     btnMergesort.setText("Mergesort");
     btnMergesort.setMargin(new Insets(2, 2, 2, 2));
     btnMergesort.addActionListener(this::btnMergesort_ActionPerformed);
     cp.add(btnMergesort);
 
     // quickSort
-    btnQuicksort.setBounds(136, 384, 81, 49);
+    JButton btnQuicksort = new JButton();
+    btnQuicksort.setBounds(150, 450, 100, 50);
     btnQuicksort.setText("Quicksort");
     btnQuicksort.setMargin(new Insets(2, 2, 2, 2));
     btnQuicksort.addActionListener(this::btnQuicksort_ActionPerformed);
     cp.add(btnQuicksort);
 
     // selectionSort
-    btnSelectionsort.setBounds(136, 384, 81, 49);
-    btnSelectionsort.setText("Quicksort");
+    JButton btnSelectionsort = new JButton();
+    btnSelectionsort.setBounds(250, 400, 100, 50);
+    btnSelectionsort.setText("Selection Sort");
     btnSelectionsort.setMargin(new Insets(2, 2, 2, 2));
     btnSelectionsort.addActionListener(this::btnSelectionsort_ActionPerformed);
     cp.add(btnSelectionsort);
 
-    jLabel2.setBounds(16, 64, 91, 25);
-    jLabel2.setText("unsortiert:");
-    cp.add(jLabel2);
-    jLabel3.setBounds(16, 224, 123, 17);
-    jLabel3.setText("sortiert:");
-    cp.add(jLabel3);
-    jtxtSortiertScrollPane.setBounds(16, 248, 441, 129);
-    jtxtSortiert.setFont(new Font("Dialog", Font.BOLD, 16));
-    jtxtSortiert.setEditable(false);
-    cp.add(jtxtSortiertScrollPane);
-    btnWerteErzeugen.setBounds(16, 384, 113, 49);
-    btnWerteErzeugen.setText("Erzeuge Werte");
-    btnWerteErzeugen.setMargin(new Insets(2, 2, 2, 2));
-    btnWerteErzeugen.addActionListener(this::btnWerteErzeugen_ActionPerformed);
-    cp.add(btnWerteErzeugen);
+    // bubbleSort
+    JButton btnBubblesort = new JButton();
+    btnBubblesort.setBounds(150, 400, 100, 50);
+    btnBubblesort.setText("Bubble Sort");
+    btnBubblesort.setMargin(new Insets(2, 2, 2, 2));
+    btnBubblesort.addActionListener(this::btnBubblesort_ActionPerformed);
+    cp.add(btnBubblesort);
+
     // Ende Komponenten
     setVisible(true);
-  } // end of public RekursivSortieren
-  
-  // Anfang Methoden
+  }
+
   public static void main(String[] args) {
     new GUI("RekursivSortieren");
   } // end of main
 
-  public void btnQuicksort_ActionPerformed(ActionEvent evt) {
+  private void btnQuicksort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.quickSort();
 
-    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnMergesort_ActionPerformed
+    updateOutput();
+  }
 
-  public void btnBubblesort_ActionPerformed(ActionEvent evt) {
+  private void btnBubblesort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.bubbleSort();
 
-    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnMergesort_ActionPerformed
+    updateOutput();
+  }
 
-  public void btnSelectionsort_ActionPerformed(ActionEvent evt) {
+  private void btnSelectionsort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.selectionSort();
 
-    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnMergesort_ActionPerformed
+    updateOutput();
+  }
   
   private void btnMergesort_ActionPerformed(ActionEvent evt) {
-    rekursivSortieren.sort();
+    rekursivSortieren.mergeSort();
 
-    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnMergesort_ActionPerformed
+    updateOutput();
+  }
 
   private void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.erzeugeNeuesArray(50, 0, 100);
 
-    jtxtUnsortiert.setText(rekursivSortieren.arrayAusgeben());
-  } // end of btnWerteErzeugen_ActionPerformed
+    updateInput();
+  }
 
-  // Ende Methoden
-} // end of class BinaereSuche
+  private void updateInput() {
+    jtxtUnsortiert.setText(rekursivSortieren.arrayAusgeben());
+  }
+
+  private void updateOutput() {
+    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
+  }
+}

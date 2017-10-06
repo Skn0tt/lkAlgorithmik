@@ -39,7 +39,7 @@ class RekursivSortieren {
 
     int maxIndex = 0;
 
-    for (int i = 0; i < high; i++) {
+    for (int i = 0; i <= high; i++) {
       if (array[i] > array[maxIndex]) maxIndex = i;
     }
 
@@ -58,7 +58,7 @@ class RekursivSortieren {
   private void bubbleSort(int high) {
     if (high < 1) return;
 
-    for (int i = 1; i < high; i++) {
+    for (int i = 1; i <= high; i++) {
       if (array[i - 1] > array[i]) swap(i - 1, i);
     }
 
