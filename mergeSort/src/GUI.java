@@ -1,12 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.StringJoiner;
-import java.util.stream.IntStream;
 
 import javax.swing.*;
-import javax.swing.event.*;
 
 
 /**
@@ -21,7 +17,11 @@ public class GUI extends JFrame {
   private JLabel jLabel1 = new JLabel();
   private JTextArea jtxtUnsortiert = new JTextArea("");
   private JScrollPane jtxtUnsortiertScrollPane = new JScrollPane(jtxtUnsortiert);
+
   private JButton btnMergesort = new JButton();
+  private JButton btnQuicksort = new JButton();
+  private JButton btnSelectionsort = new JButton();
+  private JButton btnBubblesort = new JButton();
 
   private RekursivSortieren rekursivSortieren = new RekursivSortieren();
 
@@ -62,11 +62,28 @@ public class GUI extends JFrame {
     jtxtSortiert.setTabSize(3);
     jtxtUnsortiert.setFont(new Font("Dialog", Font.BOLD, 16));
     cp.add(jtxtUnsortiertScrollPane);
+
+    // mergeSort
     btnMergesort.setBounds(136, 384, 81, 49);
     btnMergesort.setText("Mergesort");
     btnMergesort.setMargin(new Insets(2, 2, 2, 2));
     btnMergesort.addActionListener(this::btnMergesort_ActionPerformed);
     cp.add(btnMergesort);
+
+    // quickSort
+    btnQuicksort.setBounds(136, 384, 81, 49);
+    btnQuicksort.setText("Quicksort");
+    btnQuicksort.setMargin(new Insets(2, 2, 2, 2));
+    btnQuicksort.addActionListener(this::btnQuicksort_ActionPerformed);
+    cp.add(btnQuicksort);
+
+    // selectionSort
+    btnSelectionsort.setBounds(136, 384, 81, 49);
+    btnSelectionsort.setText("Quicksort");
+    btnSelectionsort.setMargin(new Insets(2, 2, 2, 2));
+    btnSelectionsort.addActionListener(this::btnSelectionsort_ActionPerformed);
+    cp.add(btnSelectionsort);
+
     jLabel2.setBounds(16, 64, 91, 25);
     jLabel2.setText("unsortiert:");
     cp.add(jLabel2);
@@ -90,7 +107,26 @@ public class GUI extends JFrame {
   public static void main(String[] args) {
     new GUI("RekursivSortieren");
   } // end of main
+
+  public void btnQuicksort_ActionPerformed(ActionEvent evt) {
+    rekursivSortieren.quickSort();
+
+    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
+  } // end of btnMergesort_ActionPerformed
+
+  public void btnBubblesort_ActionPerformed(ActionEvent evt) {
+    rekursivSortieren.bubbleSort();
+
+    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
+  } // end of btnMergesort_ActionPerformed
+
+  public void btnSelectionsort_ActionPerformed(ActionEvent evt) {
+    rekursivSortieren.selectionSort();
+
+    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
+  } // end of btnMergesort_ActionPerformed
   
+<<<<<<< HEAD:mergeSort/src/GUI.java
   private void btnMergesort_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.sort();
 
@@ -99,6 +135,16 @@ public class GUI extends JFrame {
 
   private void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
     rekursivSortieren.erzeugeNeuesArray(50, 0, 100);
+=======
+  public void btnMergesort_ActionPerformed(ActionEvent evt) {
+    rekursivSortieren.mergeSort();
+
+    jtxtSortiert.setText(rekursivSortieren.arrayAusgeben());
+  } // end of btnMergesort_ActionPerformed
+  
+  public void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
+    rekursivSortieren.erzeugeNeuesArray(50, 0, 10);
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/src/GUI.java
 
     jtxtUnsortiert.setText(rekursivSortieren.arrayAusgeben());
   } // end of btnWerteErzeugen_ActionPerformed

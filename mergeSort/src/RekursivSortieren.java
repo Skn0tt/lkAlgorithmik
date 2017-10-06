@@ -21,7 +21,78 @@ class RekursivSortieren {
     return this.array.length - 1;     
   }
 
-  public void sort() {
+  private void swap(int a, int b) {
+    int temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
+  }
+
+  /*
+  # selectionSort
+   */
+  public void selectionSort() {
+    this.selectionSort(getRechts());
+  }
+
+  private void selectionSort(int high) {
+    if (high < 1) return;
+
+    int maxIndex = 0;
+
+    for (int i = 0; i < high; i++) {
+      if (array[i] > array[maxIndex]) maxIndex = i;
+    }
+
+    swap(high, maxIndex);
+
+    selectionSort(high - 1);
+  }
+
+  /*
+  # bubbleSort
+   */
+  public void bubbleSort() {
+    this.bubbleSort(getRechts());
+  }
+
+  private void bubbleSort(int high) {
+    if (high < 1) return;
+
+    for (int i = 1; i < high; i++) {
+      if (array[i - 1] > array[i]) swap(i - 1, i);
+    }
+
+    bubbleSort(high - 1);
+  }
+
+  /*
+  # quickSort
+   */
+  public void quickSort() {
+    this.quickSort(0, getRechts());
+  }
+
+  private void quickSort(int low, int high) {
+    if (high - low < 1) return;
+
+    int pivot = array[(high + low) / 2];
+    int l = low;
+    int r = high;
+
+    while (r > l) {
+      while (array[l] < pivot) l++;
+      while (array[r] > pivot) r--;
+      swap(l, r);
+    }
+
+    quickSort(low, r - 1);
+    quickSort(r + 1, high);
+  }
+
+  /*
+  # mergeSort
+   */
+  public void mergeSort() {
     this.mergeSort(0, getRechts());
   }
   
@@ -66,8 +137,12 @@ class RekursivSortieren {
   }
   
   public String arrayAusgeben() {
+<<<<<<< HEAD:mergeSort/src/RekursivSortieren.java
     StringBuilder res = new StringBuilder(array[0] + "\t");
     
+=======
+    String res = array[0] + "\t";
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/src/RekursivSortieren.java
     for (int i = 1; i < array.length; i++) {
       if ((i % 10) == 0) {
         res.append("\n");

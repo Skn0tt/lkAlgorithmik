@@ -11,21 +11,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1395">
               <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+=======
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="98" column="77" lean-forward="false" selection-start-line="98" selection-start-column="77" selection-end-line="98" selection-end-column="77" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tester.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tester.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
             <state relative-caret-position="330">
               <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+=======
+            <state relative-caret-position="68">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
               <folding />
             </state>
           </provider>
@@ -34,9 +47,22 @@
       <file leaf-file-name="RekursivSortieren.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RekursivSortieren.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
             <state relative-caret-position="151">
               <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding />
+=======
+            <state relative-caret-position="175">
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+              <folding>
+                <element signature="e#537#538#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#882#883#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#1165#1166#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+              </folding>
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
             </state>
           </provider>
         </entry>
@@ -56,9 +82,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <option value="$PROJECT_DIR$/src/GUI.java" />
         <option value="$PROJECT_DIR$/src/RekursivSortieren.java" />
         <option value="$PROJECT_DIR$/src/Tester.java" />
+=======
+        <option value="$PROJECT_DIR$/src/Tester.java" />
+        <option value="$PROJECT_DIR$/src/RekursivSortieren.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
       </list>
     </option>
   </component>
@@ -87,11 +119,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SortingAlgorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -119,8 +199,13 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
   <component name="RunManager" selected="Application.Tester">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="Application.GUI">
+    <configuration default="false" name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="GUI" />
       <option name="VM_PARAMETERS" />
@@ -352,8 +437,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Tester" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GUI" />
+        <item index="0" class="java.lang.String" itemvalue="Application.GUI" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Tester" />
       </list>
     </recent_temporary>
   </component>
@@ -386,16 +471,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241556" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -403,10 +498,20 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18192919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32323232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18046875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -414,6 +519,13 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -438,14 +550,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <state relative-caret-position="1395">
           <caret line="103" column="46" lean-forward="false" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+=======
+        <state relative-caret-position="1632">
+          <caret line="110" column="46" lean-forward="false" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RekursivSortieren.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <state relative-caret-position="195">
           <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
           <folding />
@@ -457,17 +575,35 @@
         <state relative-caret-position="270">
           <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding />
+=======
+        <state relative-caret-position="68">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+          </folding>
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Tester.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="272">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
     <entry file="file://$PROJECT_DIR$/src/RekursivSortieren.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -480,22 +616,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="110" column="46" lean-forward="false" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RekursivSortieren.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <state relative-caret-position="60">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
+=======
+        <state relative-caret-position="175">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+          </folding>
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tester.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD:mergeSort/.idea/workspace.xml
         <state relative-caret-position="150">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+=======
+        <state relative-caret-position="593">
+          <caret line="98" column="77" lean-forward="false" selection-start-line="98" selection-start-column="77" selection-end-line="98" selection-end-column="77" />
+>>>>>>> 06dd2854a833287bbc4996872d142d3aea086fb5:SortingAlgorithms/.idea/workspace.xml
           <folding />
         </state>
       </provider>
