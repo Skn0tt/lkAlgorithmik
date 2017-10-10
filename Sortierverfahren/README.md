@@ -57,4 +57,3 @@ void merge(int low, int high) {
   while (temp < tempA.length) array[i++] = tempA[temp++];
 }
 ```
-

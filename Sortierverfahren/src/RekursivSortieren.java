@@ -82,6 +82,7 @@ class RekursivSortieren {
     while (r > l) {
       while (array[l] < pivot) l++;
       while (array[r] > pivot) r--;
+      
       swap(l, r);
     }
 

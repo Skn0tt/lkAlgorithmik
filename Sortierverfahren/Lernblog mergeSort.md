@@ -131,3 +131,4 @@ Zeichnet man $O$, so hört man meist oben wieder auf - der *Upper Bound*.
 
 Quellen: [Mehrdad Afshari @ stackoverflow.com](https://stackoverflow.com/a/471206), [Andrei Krotkov @ stackoverflow.com](https://stackoverflow.com/a/471470)
 
+# quickSort
