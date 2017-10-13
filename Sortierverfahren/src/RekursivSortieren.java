@@ -5,10 +5,10 @@
   * @version 1.0 vom 24.08.2015
   * @author
   */
-import java.util.Random;
+import java.util.*;
 
 
-public class RekursivSortieren {
+class RekursivSortieren {
   // Anfang Attribute
   private int[] array;
 
@@ -17,7 +17,7 @@ public class RekursivSortieren {
     erzeugeNeuesArray(50, 1, 100);
   }
   // Anfang Methoden
-  public int getRechts() {
+  private int getRechts() {
     return this.array.length - 1;     
   }
 
@@ -39,7 +39,7 @@ public class RekursivSortieren {
 
     int maxIndex = 0;
 
-    for (int i = 0; i < high; i++) {
+    for (int i = 0; i <= high; i++) {
       if (array[i] > array[maxIndex]) maxIndex = i;
     }
 
@@ -58,7 +58,7 @@ public class RekursivSortieren {
   private void bubbleSort(int high) {
     if (high < 1) return;
 
-    for (int i = 1; i < high; i++) {
+    for (int i = 1; i <= high; i++) {
       if (array[i - 1] > array[i]) swap(i - 1, i);
     }
 
@@ -82,6 +82,7 @@ public class RekursivSortieren {
     while (r > l) {
       while (array[l] < pivot) l++;
       while (array[r] > pivot) r--;
+      
       swap(l, r);
     }
 
@@ -97,7 +98,7 @@ public class RekursivSortieren {
   }
   
   //mergeSort rekursiv
-  public void mergeSort(int left, int right) {
+  private void mergeSort(int left, int right) {
     if (left == right) return;
     int center = (left + right) / 2;
     mergeSort(left, center);
@@ -122,9 +123,10 @@ public class RekursivSortieren {
   }
   
   /**
-   * Erzeugt ein neues Array der Länge Anzahl mit Zufallszahlen zwischen minWert und maxWert
+   * Erzeugt ein neues Array der Lï¿½nge Anzahl mit Zufallszahlen zwischen minWert und maxWert
    * @param anzahl Anzahl der Werte im Array
-   * @param minWert
+   * @param minWert minimaler Wert
+   * @param maxWert maximaler Wert
   */  
   public void erzeugeNeuesArray(int anzahl, int minWert, int maxWert) {
     array = new int[anzahl];
@@ -132,23 +134,21 @@ public class RekursivSortieren {
     Random zufallsgenerator = new Random();
     
     //Array mit Zufallszahlen belegen
-    for (int j = 0; j < array.length; j++) {
-      array[j] = zufallsgenerator.nextInt(maxWert - minWert + 1) + minWert;
-    }
-    
+    for (int j = 0; j < array.length; j++) array[j] = zufallsgenerator.nextInt(maxWert - minWert + 1) + minWert;
   }
   
   public String arrayAusgeben() {
-    String res = array[0] + "\t";
+    StringBuilder res = new StringBuilder(array[0] + "\t");
+    
     for (int i = 1; i < array.length; i++) {
       if ((i % 10) == 0) {
-        res = res + "\n";
+        res.append("\n");
       } // end of if
       
-      res = res + array[i] + "\t";
+      res.append(array[i]).append("\t");
     } // end of for
     
-    return res;
+    return res.toString();
   }
   
   // Ende Methoden
