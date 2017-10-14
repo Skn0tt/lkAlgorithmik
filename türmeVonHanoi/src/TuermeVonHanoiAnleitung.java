@@ -272,16 +272,20 @@ public class TuermeVonHanoiAnleitung extends JPanel implements Runnable, ActionL
         /**Die Methode moveOne(int fromStack, int toStack) bewegt eine Scheibe vom Stapel
         * mit der Nummer fromStack zum Stapel mit der Nummer toStack
         **/
-        if (towerHeight[from] == 1) {
+        // Rekursionsbasis: Nur eine Scheibe
+        if (disks == 1) {
             moveOne(from, to);
             return;
         }
-        moveOne(from, spare);
 
+        // Bewege alle oberen auf den Spare-Haufen
+        solve(disks - 1, from, spare, to);
 
+        // Bewege die untere auf den Target-Haufen
+        solve(1, from, to, spare);
 
-        //TODO
-        
+        // Bewege die vom Spare-Haufen auf den Target-Haufen
+        solve(disks - 1, spare, to, from);
     }
 
 

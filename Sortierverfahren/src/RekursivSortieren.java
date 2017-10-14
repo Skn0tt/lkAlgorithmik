@@ -32,6 +32,8 @@ class RekursivSortieren {
    */
   public void selectionSort() {
     this.selectionSort(getRechts());
+
+    assert isSorted();
   }
 
   private void selectionSort(int high) {
@@ -53,6 +55,8 @@ class RekursivSortieren {
    */
   public void bubbleSort() {
     this.bubbleSort(getRechts());
+
+    assert isSorted();
   }
 
   private void bubbleSort(int high) {
@@ -70,24 +74,31 @@ class RekursivSortieren {
    */
   public void quickSort() {
     this.quickSort(0, getRechts());
+
+    assert isSorted();
   }
 
   private void quickSort(int low, int high) {
     if (high - low < 1) return;
 
     int pivot = array[(high + low) / 2];
+
     int l = low;
     int r = high;
 
-    while (r > l) {
+    while (l <= r) {
       while (array[l] < pivot) l++;
       while (array[r] > pivot) r--;
-      
-      swap(l, r);
+
+      if (l <= r) {
+        swap(l, r);
+        l++;
+        r--;
+      }
     }
 
-    quickSort(low, r - 1);
-    quickSort(r + 1, high);
+    quickSort(low, r);
+    quickSort(l, high);
   }
 
   /*
@@ -95,6 +106,8 @@ class RekursivSortieren {
    */
   public void mergeSort() {
     this.mergeSort(0, getRechts());
+
+    assert isSorted();
   }
   
   //mergeSort rekursiv
@@ -120,6 +133,16 @@ class RekursivSortieren {
       else array[i++] = array[j++];
     }
     while (temp < tempA.length) array[i++] = tempA[temp++];
+  }
+
+  private boolean isSorted() {
+    int last = array[0];
+    for (int i = 1; i < array.length; i++) {
+      if (Integer.compare(last, array[i]) > 0) return false;
+      last = array[i];
+    }
+
+    return true;
   }
   
   /**

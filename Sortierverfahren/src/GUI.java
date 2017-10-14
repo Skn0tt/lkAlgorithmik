@@ -137,7 +137,7 @@ public class GUI extends JFrame {
   }
 
   private void btnWerteErzeugen_ActionPerformed(ActionEvent evt) {
-    rekursivSortieren.erzeugeNeuesArray(50, 0, 100);
+    rekursivSortieren.erzeugeNeuesArray(100000, 0, 1000);
 
     updateInput();
   }
