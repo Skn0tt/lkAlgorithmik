@@ -1,5 +1,5 @@
-# lkAlgorithmik
-LK Q1 Reichelt, Thema: Algorithmik
+# lkRekursion
+LK Q1 Reichelt, Thema: Rekursion & Backtracking
 
 **Wichtig:** Für jedes Unterthema bzw. jede eigenständige Implementierung ist ein neuer Unterordner anzulegen.
 Dieser enthält zwingend:
