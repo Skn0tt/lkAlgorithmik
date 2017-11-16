@@ -59,13 +59,13 @@ public class SudokuModel {
   }
   
   public String toString() {
-    String sudoku = ""+SUB_SIZE;
+    StringBuilder sudoku = new StringBuilder("" + SUB_SIZE);
     for (int x=0; x<SIZE; x++) {
       for (int y=0; y<SIZE; y++) {
-        sudoku += SEPARATOR+fields[x][y].getValue();
+        sudoku.append(SEPARATOR).append(fields[x][y].getValue());
       }
     }
-    return sudoku;
+    return sudoku.toString();
   }  
   
   public void fromString(String sudoku, SudokuListener listener) {

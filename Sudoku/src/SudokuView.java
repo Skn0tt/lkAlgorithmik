@@ -1,15 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
 import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.KeyboardFocusManager;
-import java.awt.KeyEventDispatcher;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -27,7 +21,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
-import javax.swing.SwingWorker;
 import javax.swing.UIManager;
 
 /**
@@ -35,7 +28,7 @@ import javax.swing.UIManager;
   * Beschreibung
   *
   * @version 1.0 vom 26.10.2017
-  * @author 
+  * @author Knut Leiß
   */
 
 public class SudokuView extends JFrame {
@@ -88,8 +81,7 @@ public class SudokuView extends JFrame {
   
   private void addKeyBindings(JPanel contentPane) {
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(
-    new KeyEventDispatcher() {
-      public boolean dispatchKeyEvent(KeyEvent e) {
+      e -> {
         if (e.getID() == KeyEvent.KEY_PRESSED) {
           int keyCode = e.getKeyCode();
           if (keyCode >= KeyEvent.VK_1 && keyCode <= KeyEvent.VK_9) {
@@ -109,6 +101,7 @@ public class SudokuView extends JFrame {
             }
           }
         }
+
         if (e.getID() == KeyEvent.KEY_TYPED) {
           char keyChar = e.getKeyChar();
           if (keyChar >= '1' && keyChar <= '9' && !autoCandidates) {
@@ -121,8 +114,7 @@ public class SudokuView extends JFrame {
           }
         }
         return false;
-      }
-    });
+      });
   }  
   
   private JMenuBar createMenuBar() {
@@ -135,38 +127,30 @@ public class SudokuView extends JFrame {
     menuItem = new JMenuItem("Generate solved puzzle (trivial)", KeyEvent.VK_T);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
-      }
-    } );
+    menuItem.addActionListener(event -> {
+      //TODO: Implement
+    });
     puzzleMenu.add(menuItem);
     
     menuItem = new JMenuItem("Generate random puzzle (from solution)", KeyEvent.VK_P);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-        if (!model.isSolution()) {
-          JOptionPane.showMessageDialog(view, "There is no solution present.\nCreate One first.", "Error", JOptionPane.ERROR_MESSAGE);  
-          return;
-        }
+    menuItem.addActionListener(event -> {
+      if (!model.isSolution()) {
+        JOptionPane.showMessageDialog(view, "There is no solution present.\nCreate One first.", "Error", JOptionPane.ERROR_MESSAGE);
       }
-    } );
+    });
     puzzleMenu.add(menuItem);
     
     menuItem = new JMenuItem("Empty puzzle", KeyEvent.VK_E);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-        model.emptyPuzzle(sudokuPanel);  
-      }
-    } );
+    menuItem.addActionListener(event -> model.emptyPuzzle(sudokuPanel));
     puzzleMenu.add(menuItem);
     
     menuItem = new JMenuItem("Load puzzle", KeyEvent.VK_L);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
+    menuItem.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
         int returnValue = fileChooser.showDialog(view, "Load Sudoku puzzle");
         if (returnValue == JFileChooser.APPROVE_OPTION) {
           File file = fileChooser.getSelectedFile();
@@ -179,38 +163,32 @@ public class SudokuView extends JFrame {
               System.err.format("IOException: %s%n", x);
             }
           }
-        }  
+        }
       }
     } );
     puzzleMenu.add(menuItem);
     
     menuItem = new JMenuItem("Save puzzle", KeyEvent.VK_S);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-        int returnValue = fileChooser.showDialog(view, "Save Sudoku puzzle");
-        if (returnValue == JFileChooser.APPROVE_OPTION) {
-          File file = fileChooser.getSelectedFile();
-          try (BufferedWriter writer = Files.newBufferedWriter(file.toPath(), StandardCharsets.UTF_8)) {
-            String gameString = model.toString();
-            writer.write(gameString);
-          } catch (IOException x) {
-            System.err.format("IOException: %s%n", x);
-          }
-        }  
+    menuItem.addActionListener(event -> {
+      int returnValue = fileChooser.showDialog(view, "Save Sudoku puzzle");
+      if (returnValue == JFileChooser.APPROVE_OPTION) {
+        File file = fileChooser.getSelectedFile();
+        try (BufferedWriter writer = Files.newBufferedWriter(file.toPath(), StandardCharsets.UTF_8)) {
+          String gameString = model.toString();
+          writer.write(gameString);
+        } catch (IOException x) {
+          System.err.format("IOException: %s%n", x);
+        }
       }
-    } );
+    });
     puzzleMenu.add(menuItem);
     
     puzzleMenu.addSeparator();
     
     menuItem = new JMenuItem("Quit", KeyEvent.VK_Q);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
-        System.exit(0);
-      }
-    } );
+    menuItem.addActionListener(event -> System.exit(0));
     puzzleMenu.add(menuItem);
     
     JMenu solveMenu = new JMenu("Solve");
@@ -219,47 +197,41 @@ public class SudokuView extends JFrame {
     displayAllCandidatesMenuItem = new JMenuItem("Display all candidates", KeyEvent.VK_D);
     displayAllCandidatesMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
     displayAllCandidatesMenuItem.setEnabled(false);
-    displayAllCandidatesMenuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-        if (!autoCandidates) sudokuPanel.showAllCandidates();  
-      }
-    } );
+    displayAllCandidatesMenuItem.addActionListener(event -> {
+      if (!autoCandidates) sudokuPanel.showAllCandidates();
+    });
     solveMenu.add(displayAllCandidatesMenuItem);
     
     menuItem = new JMenuItem("Check if solution without guessing", KeyEvent.VK_G);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-      }
-    } );
+    menuItem.addActionListener(event -> {
+      //TODO: Implement
+    });
     solveMenu.add(menuItem);
     
     menuItem = new JMenuItem("Find one solution", KeyEvent.VK_F);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-      }
-    } );
+    menuItem.addActionListener(event -> {
+      //TODO: Implement
+    });
     solveMenu.add(menuItem);
     
     menuItem = new JMenuItem("Check if unique solution", KeyEvent.VK_U);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-      }
-    } );
+    menuItem.addActionListener(event -> {
+      //TODO: Implement
+    });
     solveMenu.add(menuItem);
     
     menuItem = new JMenuItem("Count all solutions", KeyEvent.VK_C);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
     menuItem.setEnabled(false);
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
-      }
-    } );
+    menuItem.addActionListener(event -> {
+      //TODO: Implement
+    });
     solveMenu.add(menuItem);
     
     JMenu helpMenu = new JMenu("Help");
@@ -267,40 +239,49 @@ public class SudokuView extends JFrame {
     
     menuItem = new JMenuItem("Sudoku game rules", KeyEvent.VK_R);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
-        JOptionPane.showMessageDialog(view, "Fill all fields with values (1..9),\nso that no value occurs more than once\n(a) in each row\n(b) in each column\n(c) in each "+SudokuModel.SUB_SIZE+"x"+SudokuModel.SUB_SIZE+" small square.", "Sudoku Rules", JOptionPane.INFORMATION_MESSAGE);  
-      }
-    } );
+    menuItem.addActionListener(event ->
+      JOptionPane.showMessageDialog(
+        view,
+        "Fill all fields with values (1..9),\nso that no value occurs more than once\n(a) in each row\n(b) in each column\n(c) in each " +
+          SudokuModel.SUB_SIZE +
+          "x" +
+          SudokuModel.SUB_SIZE +
+          " small square.",
+        "Sudoku Rules",
+        JOptionPane.INFORMATION_MESSAGE
+      )
+    );
     helpMenu.add(menuItem);
     
     menuItem = new JMenuItem("Keyboard controls", KeyEvent.VK_K);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) { 
-        JOptionPane.showMessageDialog(view, "Arrow keys: Change focus (yellow field).\n\n<1..9>: Toggle candiate on/off.\n\n<CTRL>+<1..9>: Set field value.\n\n<DEL>: Delete candiates or value.\n\n?: Show all valid candiates.\n\nBeware: Candidates can only be edited, if option 'Auto-adjust candidates' is off.", "Keyboard Controls", JOptionPane.INFORMATION_MESSAGE);  
-      }
-    } );
+    menuItem.addActionListener(event ->
+      JOptionPane.showMessageDialog(
+        view,
+        "Arrow keys: Change focus (yellow field).\n\n<1..9>: Toggle candiate on/off.\n\n<CTRL>+<1..9>: Set field value.\n\n<DEL>: Delete candiates or value.\n\n?: Show all valid candiates.\n\nBeware: Candidates can only be edited, if option 'Auto-adjust candidates' is off.",
+        "Keyboard Controls",
+        JOptionPane.INFORMATION_MESSAGE
+      )
+    );
     helpMenu.add(menuItem);
     
     menuItem = new JMenuItem("Info on program", KeyEvent.VK_I);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, ActionEvent.CTRL_MASK));
-    menuItem.addActionListener(new ActionListener() { 
-      public void actionPerformed(ActionEvent event) {
-        JOptionPane.showMessageDialog(view, "Sudoku Creator & Solver\n\nCreated in Nov 2017\nfor a computer science class\non backpropagation\nby Knut Leiß, Germany.\n\nInfo: schule@knut-leiss.de", "About this program", JOptionPane.INFORMATION_MESSAGE);  
-      }
-    } );
+    menuItem.addActionListener(event ->
+      JOptionPane.showMessageDialog(
+        view,
+        "Sudoku Creator & Solver\n\nCreated in Nov 2017\nfor a computer science class\non backpropagation\nby Knut Leiß, Germany.\n\nInfo: schule@knut-leiss.de",
+        "About this program",
+        JOptionPane.INFORMATION_MESSAGE
+      )
+    );
     helpMenu.add(menuItem);
     
     JMenu optionsMenu = new JMenu("Options");
     helpMenu.setMnemonic(KeyEvent.VK_O);
     
     menuItem = new JCheckBoxMenuItem("Auto-adjust candidates", true);
-    menuItem.addItemListener(new ItemListener() { 
-      public void itemStateChanged(ItemEvent event) {
-        setAutoCandidates(event.getStateChange() == ItemEvent.SELECTED);
-      }
-    } );
+    menuItem.addItemListener(event -> setAutoCandidates(event.getStateChange() == ItemEvent.SELECTED));
     optionsMenu.add(menuItem);
     
     menuBar.add(puzzleMenu);
