@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lkAlgorithmik.iml" filepath="$PROJECT_DIR$/.idea/lkAlgorithmik.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BinarySearch/BinarySearch.iml" filepath="$PROJECT_DIR$/BinarySearch/BinarySearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DamenProblem/DamenProblem.iml" filepath="$PROJECT_DIR$/DamenProblem/DamenProblem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GameOfLife/GameOfLife.iml" filepath="$PROJECT_DIR$/GameOfLife/GameOfLife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kochkurven/Kochkurven.iml" filepath="$PROJECT_DIR$/Kochkurven/Kochkurven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rekursive Zahlenfolgen/Rekursive Zahlenfolgen.iml" filepath="$PROJECT_DIR$/Rekursive Zahlenfolgen/Rekursive Zahlenfolgen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sortierverfahren/Sortierverfahren.iml" filepath="$PROJECT_DIR$/Sortierverfahren/Sortierverfahren.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sudoku/Sudoku.iml" filepath="$PROJECT_DIR$/Sudoku/Sudoku.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lkRekursion.iml" filepath="$PROJECT_DIR$/.idea/lkRekursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/türmeVonHanoi/türmeVonHanoi.iml" filepath="$PROJECT_DIR$/türmeVonHanoi/türmeVonHanoi.iml" />
     </modules>
   </component>
 </project>
