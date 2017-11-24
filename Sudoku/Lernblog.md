@@ -1,4 +1,42 @@
 # Backtracking
+
+## Backtracking Allgemein
+
+Beim Backtracking probiert man jede mögliche Lösung aus, überprüft allerdings mit jedem Schritt die Abbruchbedingungen des Problems.
+Dabei ist der Algorithmus immer sehr ähnlich aufgebaut:
+
+### Pseudocode
+```pseudo
+backtrack()
+  WENN Problem gelöst
+    GIB Lösung ZURÜCK
+  
+  Finde Element im Ursprungszustand
+  DURCHLAUFE jeden Zustand
+    WENN Zustand zulässig
+      Setze Zustand um
+
+      WENN backtrack() Lösung findet
+        GIB Lösung ZURÜCK
+      
+      Mache Zustand Rückgängig
+  
+  GIB keine Lösung ZURÜCK
+```
+
+Für jedes Element des Problems (Spalten im Damenproblem, Länder im Vierfarbenproblem...) werden alle möglichen Zustände ausprobiert (Z. 5f).
+Ist ein Zustand zulässig (Z. 7), so wird diese Möglichkeit umgesetzt (Z. 8) und rekursiv überprüft, ob es eine Lösung für den aktuellen Zustand gibt (Z. 10).
+Gibt es diesen, wird er zurückgegeben (Z. 11).
+Gibt es diesen nicht, wird der vorherige Schritt rückgängig gemacht (Z. 13) und der nächste Zustand überprüft.
+Sollten alle möglichen Zustände überprüft worden sein, ohne dass eine Lösung gefunden wurde, dann gibt es für den aktuellen Zustand keine Lösung und das wird dementsprechend zurückgegeben (Z. 15).
+
+Die Rekursionsbasis stellt der Fall ein, dass das Problem gelöst ist: Dann wird einfach die Lösung zurückgegeben (Z. 2f).
+
+### Bedingungen an das Problem
+Damit ein Problem effizient per Backtracking gelöst werden kann, muss es folgende Eigenschaften besitzen:
+
+1. Es lässt sich in $n \in \mathbb{N}$ Unterprobleme mit $k \in \mathbb{N}$ möglichen Zuständen aufteilen
+
 ## Backtracking am Beispiel des Vierfarbenproblems
 Beim Vierfarbenproblem geht es darum, eine Karte mit $n$ Ländern unter Verwendung von $k$ Farben einzufärben.
 
@@ -84,47 +122,35 @@ Falls über alle Farben iteriert wurde, ohne eine Lösung zu finden, gibt es fü
 [Das Vierfarbenproblem als Präsentation](https://simonknott.de/slides/vierfarbenproblem)
 
 ## Backtracking am Beispiel von Sudoku
-// Problemerklärung
+Sudoku ist ein beliebtes Zahlenrätsel, bei dem es um das ausfüllen eines Zahlenfeldes nach bestimmten Regeln geht.
+
+Eine Matrix $M$ der Dimension $9 \times 9$ (selten andere Größen) besteht aus $3 \times 3$ Submatrizen $Q$ der Dimension $3 \times 3$.
+Jede Komponente sei eine natürliche Zahl $0 \geq x \geq 10$, sodass $x$ in jeder Spalte, Zeile und Submatriz einzigartig ist.
+
+Dabei sind zu Beginn schon einige Zahlen eingetragen.
+
+![Beispiel](http://www.texample.net/media/tikz/examples/PNG/sudoku.png)
+
+Zur Lösung eines Sudokus kann man sehr gut Backtracking verwenden.
+Dabei sind die Komponenten unsere Elemente und die Zahlen $[0; 9]$ die möglichen Zustände dieser.
+
 ### Pseudocode
 ```pseudo
-```
-### Demonstration
-https://github.com/pocketjoso/sudokuJS
-
-## Backtracking Allgemein
-
-Beim Backtracking probiert man jede mögliche Lösung aus, überprüft allerdings mit jedem Schritt die Abbruchbedingungen des Problems.
-Dabei ist der Algorithmus immer sehr ähnlich aufgebaut:
-
-### Pseudocode
-```pseudo
-backtrack()
-  WENN Problem gelöst
-    GIB Lösung ZURÜCK
+WENN Alle Komponenten befüllt
+    GIB Feld ZURÜCK
   
-  Finde Element im Ursprungszustand
-  DURCHLAUFE jeden Zustand
-    WENN Zustand zulässig
-      Setze Zustand um
+  Finde leere Komponente
+  DURCHLAUFE 1..9
+    WENN Zahl zulässig
+      Setze Zahl
 
       WENN backtrack() Lösung findet
         GIB Lösung ZURÜCK
       
-      Mache Zustand Rückgängig
+      Entferne Zahl
   
   GIB keine Lösung ZURÜCK
 ```
-
-Für jedes Element des Problems (Spalten im Damenproblem, Länder im Vierfarbenproblem...) werden alle möglichen Zustände ausprobiert (Z. 5f).
-Ist ein Zustand zulässig (Z. 7), so wird diese Möglichkeit umgesetzt (Z. 8) und rekursiv überprüft, ob es eine Lösung für den aktuellen Zustand gibt (Z. 10).
-Gibt es diesen, wird er zurückgegeben (Z. 11).
-Gibt es diesen nicht, wird der vorherige Schritt rückgängig gemacht (Z. 13) und der nächste Zustand überprüft.
-Sollten alle möglichen Zustände überprüft worden sein, ohne dass eine Lösung gefunden wurde, dann gibt es für den aktuellen Zustand keine Lösung und das wird dementsprechend zurückgegeben (Z. 15).
-
-Die Rekursionsbasis stellt der Fall ein, dass das Problem gelöst ist: Dann wird einfach die Lösung zurückgegeben (Z. 2f).
-
-### Bedingungen an das Problem
-Damit ein Problem effizient per Backtracking gelöst werden kann, muss es folgende Eigenschaften besitzen:
-
-1. Es lässt sich in $n \in \mathbb{N}$ Unterprobleme mit $k \in \mathbb{N}$ möglichen Zuständen aufteilen
+### Demonstration
+https://github.com/pocketjoso/sudokuJS
 
